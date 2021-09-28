@@ -1,0 +1,5 @@
+<li>
+  <mat-icon>{{item.icon}}</mat-icon>
+  <a *ngIf="item.label && (screenSize>=3 || mode==='side-menu')"
+    > {{item.label}} </a>
+</li>

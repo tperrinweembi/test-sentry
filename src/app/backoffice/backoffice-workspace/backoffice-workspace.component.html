@@ -1,0 +1,21 @@
+<mat-sidenav-container id="bo-workspace">
+  <mat-sidenav #bosidenav id="bo-sidenav-space" mode="over" closed>
+    <app-bo-sidenav></app-bo-sidenav>
+  </mat-sidenav>
+
+  <mat-sidenav-content id="bo-mainspace">
+
+    <app-bo-header id="bo-mainspace-header"
+      class="mat-elevation-z4"
+      [class.hide]="scrollingUp"
+      (openBoSidenav)="bosidenav.open()">
+    </app-bo-header>
+
+    <div id="bo-mainspace-content" >
+      <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-content>
+
+</mat-sidenav-container>
+
+

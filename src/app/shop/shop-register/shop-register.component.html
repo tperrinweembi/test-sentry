@@ -1,0 +1,28 @@
+<div id="main-content">
+  <mat-card>
+    <mat-card-title>Inscription</mat-card-title>
+    <mat-card-content>
+      <form id="register-form" [formGroup]="registerForm">
+        <mat-form-field class="form-field">
+          <input matInput type="text" formControlName="lastName" placeholder="Nom">
+        </mat-form-field>
+        <mat-form-field class="form-field">
+          <input matInput type="text" formControlName="firstName" placeholder="Prénom">
+        </mat-form-field>
+        <mat-form-field class="form-field">
+          <input matInput type="email" formControlName="email" placeholder="Email" autocomplete="username">
+        </mat-form-field>
+        <mat-form-field class="form-field">
+          <input matInput type="password" formControlName="password" placeholder="Mot de passe"
+            autocomplete="current-password">
+        </mat-form-field>
+        <mat-form-field class="form-field">
+          <input matInput type="password" formControlName="confirmPassword" placeholder="Confirmation du mot de passe"
+            autocomplete="current-password">
+        </mat-form-field>
+        <div *ngIf="error$ |async; let error">{{ error }}</div>
+        <button mat-raised-button color="primary" (click)="tryRegister()">Inscription</button>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>

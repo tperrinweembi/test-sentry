@@ -1,0 +1,106 @@
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use '~@angular/material' as mat;
+
+// Plus imports for other components in your app.
+@use './app/shared/styles/wb-button.style.sass' as button;
+@use './app/shared/styles/wb-link.style.sass' as link;
+@use './app/shared/styles/wb-mat-icon.style.sass' as mat-icon;
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat.core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+/* For use in src/lib/core/theming/_palette.scss */
+
+// back-office colors
+$bo-success: #408526;
+$bo-primary-lightest: #f2fcff;
+$bo-weembi-blue: #4ebfe0;
+$bo-primary-hover: #007bc7;
+$bo-primary: #005e98;
+$bo-primary-dark: #142733;
+$bo-accent-hover: #ffe800;
+$bo-accent: #ffcf00;
+$bo-accent-dark: #472c00;
+
+// weembi palette
+// prettier-ignore
+$weembi-palette: (
+  50: $bo-success,
+  100: #ffffff,
+  200: $bo-primary-lightest,
+  300: $bo-weembi-blue,
+  400: $bo-primary-hover,
+  500: $bo-primary,
+  800: $bo-primary-dark,
+  A400: $bo-accent-hover,
+  A500: $bo-accent,
+  contrast: (
+    50: #ffffff,
+    100: #000000,
+    200: $bo-primary-dark,
+    300: #ffffff,
+    400: #ffffff,
+    500: $bo-primary-lightest,
+    800: $bo-primary-lightest,
+    A400: $bo-accent-dark,
+    A500: $bo-accent-dark
+  )
+);
+
+:root {
+  --bo-success: #{$bo-success};
+  --bo-primary-lightest: #{$bo-primary-lightest};
+  --bo-weembi-blue: #{$bo-weembi-blue};
+  --bo-primary-hover: #{$bo-primary-hover};
+  --bo-primary: #{$bo-primary};
+  --bo-primary-dark: #{$bo-primary-dark};
+  --bo-accent-hover: #{$bo-accent-hover};
+  --bo-accent: #{$bo-accent};
+  --bo-accent-dark: #{$bo-accent-dark};
+}
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$weembi-theme: mat.define-light-theme(
+  (
+    color: (
+      primary: mat.define-palette($weembi-palette, 500),
+      accent: mat.define-palette($weembi-palette, A500),
+      warn: mat.define-palette(mat.$red-palette)
+    )
+  )
+);
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include mat.all-component-themes($weembi-theme);
+
+// Custom weembi styles
+@include button.theme($weembi-theme);
+@include link.theme($weembi-theme);
+@include mat-icon.theme($weembi-theme);
+
+// Custom heading typography config
+// $heading-font-family: "'Roboto', sans-serif";
+// $weembi-typography: mat.define-typography-config(
+//   $headline: mat.define-typography-level(24px, 24px, 400, $heading-font-family),
+//   $title: mat.define-typography-level(20px, 20px, 400, $heading-font-family),
+//   $body-1: mat.define-typography-level(14px, 14px, 400, $heading-font-family)
+// );
+// @include mat.core($weembi-typography);
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}

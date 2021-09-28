@@ -1,0 +1,6 @@
+{
+	"/api": {
+		"target": "https://fake-url.site",
+		"secure": true
+	}
+}

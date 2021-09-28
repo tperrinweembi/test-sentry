@@ -1,0 +1,14 @@
+<mat-toolbar class="shop-header" color="primary">
+  <ng-container *ngrxLet="isAnonymous$ as isAnonymous">
+    <span routerLink="/shop" class="shop-brand link">Mon logo</span>
+
+    <span *ngIf="isAnonymous" class="actions">
+      <span routerLink="/shop/connexion" class="link">Connexion</span>
+      <span routerLink="/shop/inscription" class="link">Inscription</span>
+    </span>
+
+    <span *ngIf="!isAnonymous" class="actions">
+      <span class="link" routerLink="/shop/profil"> Mon compte</span>
+    </span>
+  </ng-container>
+</mat-toolbar>

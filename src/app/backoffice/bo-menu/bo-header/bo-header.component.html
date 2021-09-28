@@ -1,0 +1,24 @@
+<mat-toolbar id="bo-header"
+  [class.bo-header-sm]="screenSize===1"
+  [class.bo-header-md]="screenSize>=2">
+
+  <!-- burger menu displayed only on small screens -->
+  <ul *ngIf="screenSize<=2" [class.bo-burger-sm]="screenSize===1">
+    <app-bo-menu-item [boMenuItem]="boBurgerItem"
+      (click)="activateBoSidenav()">
+    </app-bo-menu-item>
+  </ul>
+
+  <!-- brand image -->
+  <a href="#" id="bo-brand" [class.bo-brand-md]="screenSize>=2">
+    <img src="assets/img/logo_white.png" alt="logo">
+  </a>
+
+  <!-- Header menu is displayed only on tablet size and abode -->
+  <ul *ngIf="screenSize>=2">
+      <app-bo-menu-item *ngFor="let item of boMenuItems"
+        [boMenuItem]="item" mode="header">
+      </app-bo-menu-item>
+  </ul>
+
+</mat-toolbar>
