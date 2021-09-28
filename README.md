@@ -1,7 +1,7 @@
 # sentry-test
 
 The project reproduces the sentry error since the imports of sentry packages:
-- Clone the repro
+- Clone the repo
 - Run "npm init"
 - Run "ng serve"
 
