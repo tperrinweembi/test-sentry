@@ -14,7 +14,7 @@ The project reproduces the sentry error since the imports of sentry packages:
 Then in the browser I got "Failed to compile", and in the browser console:
 "\x1B[91merror\x1B[0m\x1B[90m TS2318: \x1B[0mCannot find global type 'BigInt'.\r\n"
 
-- ⚠️⚠️ I tried to start a fresh new project with all the same npm packages from package.json, compilation doesn't make any error ! So, in some way, this is my code that makes the sentry imports crach the compilation, even if I don't encounter any error without sentry imports. Here are some of the features I implement in the project
+> ⚠️⚠️ I tried to start a fresh new project with all the same npm packages from package.json, compilation doesn't make any error ! So, in some way, this is my code that makes the sentry imports crach the compilation, even if I don't encounter any error without sentry imports. Here are some of the features I implement in the project
 - Angular material CDK
 - Angular material
 - Lazy loading
