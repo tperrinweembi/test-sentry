@@ -2,7 +2,7 @@
 
 The project reproduces the sentry error since the imports of sentry packages:
 - Clone the repo
-- Run "npm init"
+- Run "npm i"
 - Run "ng serve"
 
 - Compiling the project as it is with "ng serve", the project compiles well. ⚠️ Since I didn't included the back-end of the project, it might result some errors if you try to navigate in the browser, but it shouldn't be a problem for our concers since the error is right from the imports at "ng serve".
